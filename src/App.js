@@ -1,25 +1,30 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let counter = 5;
+    const [count, setCount] = useState(5);
+
+    const add = () => {
+        //counter = counter + 1;
+        setCount (count + 1)
+    console.log('ADD ONE', counter);
+    }
+    const minus = () => {
+        //counter = counter - 1;
+        setCount(count - 1)
+        console.log('MINUS ONE', counter);
+    }
+    return (
+        <div>
+         <button onClick={add}>Add 1</button>
+
+             {count}
+
+            <button onClick={minus}>Minus 1</button>
+        </div>
+    );
 }
 
 export default App;
